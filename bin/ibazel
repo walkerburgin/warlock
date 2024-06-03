@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This wrapper calls through to ibazel, and will auto-install
+# ibazel if it's not already present.
+
+set -euo pipefail
+
+if ! command -v npm &> /dev/null; then
+    >&2 echo "error: npm not present on PATH."
+    exit 1
+fi
+
+IBAZEL_EXEC="$(npm prefix --global)"/bin/ibazel
+
+if [[ ! -x "$IBAZEL_EXEC" ]]; then
+    >&2 echo "ibazel executable not installed; installing @bazel/ibazel …"
+
+    npm install --global @bazel/ibazel
+fi
+
+"$IBAZEL_EXEC" "$@"
+

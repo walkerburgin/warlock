@@ -1,0 +1,18 @@
+{
+  "name": "@monorepo/vite-config",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "../../bin/bazel build ..."
+  },
+  "dependencies": {
+    "vite": " ^5.2.0"
+  },
+  "author": "Walker Burgin <walkerburgin@gmail.com>",
+  "devDependencies": {
+    "@types/node": "^20.14.0"
+  }
+}

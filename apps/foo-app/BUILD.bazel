@@ -1,0 +1,3 @@
+load("//bazel:defs.bzl", "bundle_npm_package")
+
+bundle_npm_package()

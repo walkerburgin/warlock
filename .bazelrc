@@ -1,0 +1,9 @@
+# Honor the setting of `skipLibCheck` in the tsconfig.json file
+build --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+fetch --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+query --@aspect_rules_ts//ts:skipLibCheck=honor_tsconfig
+
+# Use "tsc" as the transpiler when ts_project has no `transpiler` set.
+build --@aspect_rules_ts//ts:default_to_tsc_transpiler
+fetch --@aspect_rules_ts//ts:default_to_tsc_transpiler
+query --@aspect_rules_ts//ts:default_to_tsc_transpiler

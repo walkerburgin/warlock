@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This wrapper calls through to bazelisk, and will auto-install
+# bazelisk if it's not already present.
+
+set -euo pipefail
+
+if ! command -v npm &> /dev/null; then
+    >&2 echo "error: npm not present on PATH."
+    exit 1
+fi
+
+BAZELISK_EXEC="$(npm prefix --global)"/bin/bazelisk
+
+if [[ ! -x "$BAZELISK_EXEC" ]]; then
+    >&2 echo "bazelisk executable not installed; installing @bazel/bazelisk …"
+
+    npm install --global @bazel/bazelisk
+fi
+
+"$BAZELISK_EXEC" "$@"
+
+
