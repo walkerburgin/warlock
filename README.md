@@ -25,3 +25,17 @@
     ```bash
     bazel build //...
     ```
+
+## Hard linking `dist` + `pnpm install`
+1. Run PNPM to setup `node_modules` in the source tree
+    ```bash
+    pnpm install
+    ```
+1. Build with Bazel
+    ```bash
+    bazel build //...
+    ```
+1. Hard link each package's `dist` directory to mirror the contents of `bazel-bin`
+    ```
+    yq -r '.importers | keys | map(select(. != ".")) | .[]' pnpm-lock.yaml | xargs -I{} rsync -a --link-dest=$PWD/bazel-bin/{}/dist $PWD/bazel-bin/{}/dist {}
+    ```

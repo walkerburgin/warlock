@@ -9,7 +9,7 @@ def library_npm_package():
     ts_project(
         name = "dist",
         srcs = native.glob(["src/**"]),
-        assets = native.glob(["src/**"], exclude=["**/*.ts"]),
+        assets = native.glob(["src/**"], exclude=["**/*.ts", "**/*.tsx"]),
         composite = True,
         declaration = True,
         declaration_map = True,
@@ -39,7 +39,7 @@ def bundle_npm_package():
         name = "typescript",
         root_dir = "src",
         srcs = native.glob(["src/**"]),
-        assets = native.glob(["src/**"]),
+        assets = native.glob(["src/**"], exclude = ["**/*.ts", "**/*.tsx"]),
         composite = True,
         deps = [":node_modules", "//:node_modules"],
         declaration = True,
