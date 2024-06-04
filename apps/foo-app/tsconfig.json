@@ -1,4 +1,5 @@
 {
+  "extends": "@monorepo/tsconfig",
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",

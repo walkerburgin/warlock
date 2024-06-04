@@ -14,6 +14,12 @@ importers:
       '@bazel/ibazel':
         specifier: ^0.25.0
         version: 0.25.0
+      '@monorepo/bazel-bin-tsserver-plugin':
+        specifier: file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz
+        version: file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz
+      prettier:
+        specifier: ^3.3.0
+        version: 3.3.0
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -33,6 +39,9 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
     devDependencies:
+      '@monorepo/tsconfig':
+        specifier: workspace:*
+        version: link:../../pkgs/tsconfig
       '@monorepo/vite-config':
         specifier: workspace:*
         version: link:../../pkgs/vite-config
@@ -43,15 +52,34 @@ importers:
         specifier: ^18.3.0
         version: 18.3.0
 
+  pkgs/bazel-bin-tsserver-plugin:
+    dependencies:
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
+    devDependencies:
+      '@types/node':
+        specifier: ^20.14.0
+        version: 20.14.0
+
   pkgs/foo-lib:
     dependencies:
       react:
         specifier: ^18.3.1
         version: 18.3.1
     devDependencies:
+      '@monorepo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.3
+
+  pkgs/tsconfig:
+    dependencies:
+      '@monorepo/bazel-bin-tsserver-plugin':
+        specifier: workspace:*
+        version: link:../bazel-bin-tsserver-plugin
 
   pkgs/vite-config:
     dependencies:
@@ -59,6 +87,9 @@ importers:
         specifier: ' ^5.2.0'
         version: 5.2.10(@types/node@20.14.0)
     devDependencies:
+      '@monorepo/tsconfig':
+        specifier: workspace:*
+        version: link:../tsconfig
       '@types/node':
         specifier: ^20.14.0
         version: 20.14.0
@@ -464,6 +495,12 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.2.0
 
+  /prettier@3.3.0:
+    resolution: {integrity: sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
+
   /react-dom@18.3.1(react@18.3.1):
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
@@ -520,7 +557,6 @@ packages:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
@@ -559,3 +595,11 @@ packages:
       rollup: 4.17.2
     optionalDependencies:
       fsevents: 2.3.3
+
+  file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz:
+    resolution: {integrity: sha512-9qXs8B0XLFEpGmtCj2ebBiYtPBdIKUVsXi/ewrZxEG0d1zApULwmlIi32KrL/jyDdYIHhoTYqxsGLgErLJT0yg==, tarball: file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz}
+    name: '@monorepo/bazel-bin-tsserver-plugin'
+    version: 0.0.0
+    dependencies:
+      typescript: 5.4.5
+    dev: true

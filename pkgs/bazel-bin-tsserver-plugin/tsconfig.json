@@ -1,9 +1,8 @@
 {
-  "extends": "@monorepo/tsconfig",
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -11,7 +10,8 @@
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
-    "composite": true
+    "composite": true,
+    "jsx": "react"
   },
   "include": ["src"]
 }

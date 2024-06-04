@@ -1,6 +1,6 @@
 {
-  "name": "@monorepo/foo-lib",
-  "version": "1.0.0",
+  "name": "@monorepo/bazel-bin-tsserver-plugin",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,10 +9,12 @@
   },
   "author": "Walker Burgin <walkerburgin@gmail.com>",
   "dependencies": {
-    "react": "^18.3.1"
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
-    "@monorepo/tsconfig": "workspace:*",
-    "@types/react": "^18.3.3"
-  }
+    "@types/node": "^20.14.0"
+  },
+  "files": [
+    "dist"
+  ]
 }

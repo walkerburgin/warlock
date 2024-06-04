@@ -2068,8 +2068,8 @@
       "general": {
         "bzlTransitiveDigest": "ScEG76GXxlCoPNeD4eGooXQ4hYBvyKnbLPyiuN9nY/4=",
         "recordedFileInputs": {
-          "@@//package.json": "169dfc87297194f8b33294c871423b68f7f34f2b83e2c0d73deb70a9036386c3",
-          "@@//pnpm-lock.yaml": "5f37b473b2edd453740f70c30993ca6ff6ebf075d79f7b051454a0d92e2fcb87",
+          "@@//package.json": "c5db791ab843b7c31e526349da06f0282803e7967599bc1e01049874f752d321",
+          "@@//pnpm-lock.yaml": "bd11b47132db6d044ce2414d78ee67f380a9f2907f3688031c360d02f310529e",
           "@@//.npmrc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
           "@@aspect_bazel_lib~~toolchains~yq_darwin_arm64//yq": "db8c11ca4c1dda8fe7c211e82e28191d48bd9ae83471b952003e819de79bcb51"
         },
@@ -2356,6 +2356,9 @@
               "link_workspace": "",
               "link_packages": {
                 "": [
+                  "typescript"
+                ],
+                "pkgs/bazel-bin-tsserver-plugin": [
                   "typescript"
                 ]
               },
@@ -2841,10 +2844,13 @@
             "attributes": {
               "package": "typescript",
               "version": "5.4.5",
-              "dev": true,
+              "dev": false,
               "root_package": "",
               "link_packages": {
                 "": [
+                  "typescript"
+                ],
+                "pkgs/bazel-bin-tsserver-plugin": [
                   "typescript"
                 ]
               },
@@ -3253,6 +3259,38 @@
                 "install",
                 "postinstall"
               ],
+              "extra_build_content": "",
+              "generate_bzl_library_targets": false,
+              "extract_full_archive": false
+            }
+          },
+          "npm__at_monorepo_bazel-bin-tsserver-plugin__0.0.0": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_rule",
+            "attributes": {
+              "package": "@monorepo/bazel-bin-tsserver-plugin",
+              "version": "0.0.0",
+              "root_package": "",
+              "link_workspace": "",
+              "link_packages": {
+                "": [
+                  "@monorepo/bazel-bin-tsserver-plugin"
+                ],
+                "pkgs/tsconfig": [
+                  "@monorepo/bazel-bin-tsserver-plugin"
+                ]
+              },
+              "integrity": "sha512-9qXs8B0XLFEpGmtCj2ebBiYtPBdIKUVsXi/ewrZxEG0d1zApULwmlIi32KrL/jyDdYIHhoTYqxsGLgErLJT0yg==",
+              "url": "file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz",
+              "commit": "",
+              "patch_args": [],
+              "patches": [],
+              "custom_postinstall": "",
+              "npm_auth": "",
+              "npm_auth_basic": "",
+              "npm_auth_username": "",
+              "npm_auth_password": "",
+              "lifecycle_hooks": [],
               "extra_build_content": "",
               "generate_bzl_library_targets": false,
               "extract_full_archive": false
@@ -4187,6 +4225,35 @@
               "extract_full_archive": false
             }
           },
+          "npm__prettier__3.3.0": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_rule",
+            "attributes": {
+              "package": "prettier",
+              "version": "3.3.0",
+              "root_package": "",
+              "link_workspace": "",
+              "link_packages": {
+                "": [
+                  "prettier"
+                ]
+              },
+              "integrity": "sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==",
+              "url": "https://registry.npmjs.org/prettier/-/prettier-3.3.0.tgz",
+              "commit": "",
+              "patch_args": [],
+              "patches": [],
+              "custom_postinstall": "",
+              "npm_auth": "",
+              "npm_auth_basic": "",
+              "npm_auth_username": "",
+              "npm_auth_password": "",
+              "lifecycle_hooks": [],
+              "extra_build_content": "",
+              "generate_bzl_library_targets": false,
+              "extract_full_archive": false
+            }
+          },
           "npm__at_bazel_bazelisk__1.19.0__links": {
             "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
             "ruleClassName": "npm_import_links",
@@ -4335,6 +4402,9 @@
               "dev": false,
               "root_package": "",
               "link_packages": {
+                "pkgs/bazel-bin-tsserver-plugin": [
+                  "@types/node"
+                ],
                 "pkgs/vite-config": [
                   "@types/node"
                 ]
@@ -4728,6 +4798,44 @@
               "lifecycle_hooks_execution_requirements": [
                 "no-sandbox"
               ],
+              "lifecycle_hooks_use_default_shell_env": false,
+              "bins": {},
+              "package_visibility": [
+                "//visibility:public"
+              ],
+              "replace_package": ""
+            }
+          },
+          "npm__at_monorepo_bazel-bin-tsserver-plugin__0.0.0__links": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_links",
+            "attributes": {
+              "package": "@monorepo/bazel-bin-tsserver-plugin",
+              "version": "0.0.0",
+              "dev": true,
+              "root_package": "",
+              "link_packages": {
+                "": [
+                  "@monorepo/bazel-bin-tsserver-plugin"
+                ],
+                "pkgs/tsconfig": [
+                  "@monorepo/bazel-bin-tsserver-plugin"
+                ]
+              },
+              "deps": {
+                "typescript": "5.4.5"
+              },
+              "transitive_closure": {
+                "@monorepo/bazel-bin-tsserver-plugin": [
+                  "0.0.0"
+                ],
+                "typescript": [
+                  "5.4.5"
+                ]
+              },
+              "lifecycle_build_target": false,
+              "lifecycle_hooks_env": [],
+              "lifecycle_hooks_execution_requirements": [],
               "lifecycle_hooks_use_default_shell_env": false,
               "bins": {},
               "package_visibility": [
@@ -5354,6 +5462,9 @@
               "root_package": "",
               "link_workspace": "",
               "link_packages": {
+                "pkgs/bazel-bin-tsserver-plugin": [
+                  "@types/node"
+                ],
                 "pkgs/vite-config": [
                   "@types/node"
                 ]
@@ -5957,6 +6068,36 @@
                 ],
                 "source-map-js": [
                   "1.2.0"
+                ]
+              },
+              "lifecycle_build_target": false,
+              "lifecycle_hooks_env": [],
+              "lifecycle_hooks_execution_requirements": [],
+              "lifecycle_hooks_use_default_shell_env": false,
+              "bins": {},
+              "package_visibility": [
+                "//visibility:public"
+              ],
+              "replace_package": ""
+            }
+          },
+          "npm__prettier__3.3.0__links": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_links",
+            "attributes": {
+              "package": "prettier",
+              "version": "3.3.0",
+              "dev": true,
+              "root_package": "",
+              "link_packages": {
+                "": [
+                  "prettier"
+                ]
+              },
+              "deps": {},
+              "transitive_closure": {
+                "prettier": [
+                  "3.3.0"
                 ]
               },
               "lifecycle_build_target": false,
