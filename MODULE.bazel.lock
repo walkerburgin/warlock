@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 6,
-  "moduleFileHash": "7a3a30d5b56ea004f6ca7d0dffd187fc5308d83cd1994bc44cd3be314365c69a",
+  "moduleFileHash": "4e6eea34fe2161bb1acaf49015ef0585b8bdb0e3f1c57d4f28db9aea34a407db",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -30,7 +30,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 6,
+            "line": 7,
             "column": 21
           },
           "imports": {
@@ -46,7 +46,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 7,
+                "line": 8,
                 "column": 15
               }
             }
@@ -60,7 +60,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 10,
+            "line": 11,
             "column": 20
           },
           "imports": {
@@ -84,7 +84,7 @@
               "devDependency": true,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 12,
+                "line": 13,
                 "column": 23
               }
             }
@@ -98,7 +98,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 23,
+            "line": 24,
             "column": 29
           },
           "imports": {
@@ -117,13 +117,43 @@
               "devDependency": true,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 26,
+                "line": 27,
                 "column": 18
               }
             }
           ],
           "hasDevUseExtension": true,
           "hasNonDevUseExtension": false
+        },
+        {
+          "extensionBzlFile": "@rules_multitool//multitool:extension.bzl",
+          "extensionName": "multitool",
+          "usingModule": "<root>",
+          "location": {
+            "file": "@@//:MODULE.bazel",
+            "line": 37,
+            "column": 26
+          },
+          "imports": {
+            "multitool": "multitool"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "hub",
+              "attributeValues": {
+                "lockfile": "//:multitool.lock.json"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 38,
+                "column": 14
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
         }
       ],
       "deps": {
@@ -131,6 +161,7 @@
         "aspect_rules_js": "aspect_rules_js@2.0.0-rc2",
         "aspect_rules_ts": "aspect_rules_ts@3.0.0-rc0",
         "rules_nodejs": "rules_nodejs@6.1.1",
+        "rules_multitool": "rules_multitool@0.7.1",
         "bazel_tools": "bazel_tools@_",
         "local_config_platform": "local_config_platform@_"
       }
@@ -514,6 +545,56 @@
             "https://bcr.bazel.build/modules/rules_nodejs/6.1.1/patches/module_dot_bazel_version.patch": "sha256-Wm8Lv0P0Vhj2ZmwTRsKQ+3zyM+iCBJnSkTz8QPWFbJA="
           },
           "remote_patch_strip": 1
+        }
+      }
+    },
+    "rules_multitool@0.7.1": {
+      "name": "rules_multitool",
+      "version": "0.7.1",
+      "key": "rules_multitool@0.7.1",
+      "repoName": "rules_multitool",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [
+        "@multitool//toolchains:all"
+      ],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@rules_multitool//multitool:extension.bzl",
+          "extensionName": "multitool",
+          "usingModule": "rules_multitool@0.7.1",
+          "location": {
+            "file": "https://bcr.bazel.build/modules/rules_multitool/0.7.1/MODULE.bazel",
+            "line": 15,
+            "column": 26
+          },
+          "imports": {
+            "multitool": "multitool"
+          },
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
+      "deps": {
+        "bazel_features": "bazel_features@1.9.0",
+        "bazel_skylib": "bazel_skylib@1.5.0",
+        "buildifier_prebuilt": "buildifier_prebuilt@6.1.2",
+        "platforms": "platforms@0.0.8",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "urls": [
+            "https://github.com/theoremlp/rules_multitool/releases/download/v0.7.1/rules_multitool-0.7.1.tar.gz"
+          ],
+          "integrity": "sha256-s1S+UnjvMm2/YT5dUqxdiXwLQQvNwrV3uKemgu0cWjc=",
+          "strip_prefix": "rules_multitool-0.7.1",
+          "remote_patches": {},
+          "remote_patch_strip": 0
         }
       }
     },
@@ -928,6 +1009,56 @@
             "https://bcr.bazel.build/modules/rules_proto/6.0.0/patches/module_dot_bazel_version.patch": "sha256-fjQjxMdkMeumhvx9JdFSYeHH+Ex4TaTXNFMi554NF8E="
           },
           "remote_patch_strip": 1
+        }
+      }
+    },
+    "buildifier_prebuilt@6.1.2": {
+      "name": "buildifier_prebuilt",
+      "version": "6.1.2",
+      "key": "buildifier_prebuilt@6.1.2",
+      "repoName": "buildifier_prebuilt",
+      "executionPlatformsToRegister": [],
+      "toolchainsToRegister": [
+        "@buildifier_prebuilt_toolchains//:all"
+      ],
+      "extensionUsages": [
+        {
+          "extensionBzlFile": "@buildifier_prebuilt//:defs.bzl",
+          "extensionName": "buildifier_prebuilt_deps_extension",
+          "usingModule": "buildifier_prebuilt@6.1.2",
+          "location": {
+            "file": "https://bcr.bazel.build/modules/buildifier_prebuilt/6.1.2/MODULE.bazel",
+            "line": 10,
+            "column": 32
+          },
+          "imports": {
+            "buildifier_prebuilt_toolchains": "buildifier_prebuilt_toolchains"
+          },
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        }
+      ],
+      "deps": {
+        "bazel_skylib": "bazel_skylib@1.5.0",
+        "platforms": "platforms@0.0.8",
+        "bazel_tools": "bazel_tools@_",
+        "local_config_platform": "local_config_platform@_"
+      },
+      "repoSpec": {
+        "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+        "ruleClassName": "http_archive",
+        "attributes": {
+          "urls": [
+            "https://github.com/keith/buildifier-prebuilt/archive/refs/tags/6.1.2.tar.gz"
+          ],
+          "integrity": "sha256-KaUOpUWBDcB3xAjVIOuD6d4+7P5jleicsHFJ2QP8MeU=",
+          "strip_prefix": "buildifier-prebuilt-6.1.2",
+          "remote_patches": {
+            "https://bcr.bazel.build/modules/buildifier_prebuilt/6.1.2/patches/module_dot_bazel_version.patch": "sha256-U79F1nzwKoLhPknGAjb0A/xNnnB62K5Hj71pgXYfNO0="
+          },
+          "remote_patch_strip": 0
         }
       }
     },
@@ -2069,7 +2200,7 @@
         "bzlTransitiveDigest": "ScEG76GXxlCoPNeD4eGooXQ4hYBvyKnbLPyiuN9nY/4=",
         "recordedFileInputs": {
           "@@//package.json": "c5db791ab843b7c31e526349da06f0282803e7967599bc1e01049874f752d321",
-          "@@//pnpm-lock.yaml": "bd11b47132db6d044ce2414d78ee67f380a9f2907f3688031c360d02f310529e",
+          "@@//pnpm-lock.yaml": "fa96ebfe623f0b8b043b128bd77e2e2a34143006b8b55f7932ed68b47a013266",
           "@@//.npmrc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
           "@@aspect_bazel_lib~~toolchains~yq_darwin_arm64//yq": "db8c11ca4c1dda8fe7c211e82e28191d48bd9ae83471b952003e819de79bcb51"
         },
@@ -6451,6 +6582,155 @@
         "recordedRepoMappingEntries": []
       }
     },
+    "@@buildifier_prebuilt~//:defs.bzl%buildifier_prebuilt_deps_extension": {
+      "general": {
+        "bzlTransitiveDigest": "hnbLivq7up7t2JrR4ZHtDWaHIHSsyQk6eY6kNQH22Uw=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "buildozer_darwin_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildozer-darwin-amd64"
+              ],
+              "downloaded_file_path": "buildozer",
+              "executable": true,
+              "sha256": "4014751a4cc5e91a7dc4b64be7b30c565bd9014ae6d1879818dc624562a1d431"
+            }
+          },
+          "buildifier_linux_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-linux-amd64"
+              ],
+              "downloaded_file_path": "buildifier",
+              "executable": true,
+              "sha256": "51bc947dabb7b14ec6fb1224464fbcf7a7cb138f1a10a3b328f00835f72852ce"
+            }
+          },
+          "buildozer_darwin_arm64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildozer-darwin-arm64"
+              ],
+              "downloaded_file_path": "buildozer",
+              "executable": true,
+              "sha256": "e78bd5357f2356067d4b0d49ec4e4143dd9b1308746afc6ff11b55b952f462d7"
+            }
+          },
+          "buildozer_linux_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildozer-linux-amd64"
+              ],
+              "downloaded_file_path": "buildozer",
+              "executable": true,
+              "sha256": "2aef0f1ef80a0140b8fe6e6a8eb822e14827d8855bfc6681532c7530339ea23b"
+            }
+          },
+          "buildozer_windows_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildozer-windows-amd64.exe"
+              ],
+              "downloaded_file_path": "buildozer.exe",
+              "executable": true,
+              "sha256": "07664d5d08ee099f069cd654070cabf2708efaae9f52dc83921fa400c67a868b"
+            }
+          },
+          "buildozer_linux_arm64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildozer-linux-arm64"
+              ],
+              "downloaded_file_path": "buildozer",
+              "executable": true,
+              "sha256": "586e27630cbc242e8bd6fe8e24485eca8dcadea6410cc13cbe059202655980ac"
+            }
+          },
+          "buildifier_windows_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-windows-amd64.exe"
+              ],
+              "downloaded_file_path": "buildifier.exe",
+              "executable": true,
+              "sha256": "92bdd284fbc6766fc3e300b434ff9e68ac4d76a06cb29d1bdefe79a102a8d135"
+            }
+          },
+          "buildifier_prebuilt_toolchains": {
+            "bzlFile": "@@buildifier_prebuilt~//:defs.bzl",
+            "ruleClassName": "_buildifier_toolchain_setup",
+            "attributes": {
+              "assets_json": "[{\"arch\":\"amd64\",\"name\":\"buildifier\",\"platform\":\"darwin\",\"sha256\":\"e2f4a67691c5f55634fbfb3850eb97dd91be0edd059d947b6c83d120682e0216\",\"version\":\"v6.1.2\"},{\"arch\":\"arm64\",\"name\":\"buildifier\",\"platform\":\"darwin\",\"sha256\":\"7549b5f535219ac957aa2a6069d46fbfc9ea3f74abd85fd3d460af4b1a2099a6\",\"version\":\"v6.1.2\"},{\"arch\":\"amd64\",\"name\":\"buildifier\",\"platform\":\"linux\",\"sha256\":\"51bc947dabb7b14ec6fb1224464fbcf7a7cb138f1a10a3b328f00835f72852ce\",\"version\":\"v6.1.2\"},{\"arch\":\"arm64\",\"name\":\"buildifier\",\"platform\":\"linux\",\"sha256\":\"0ba6e8e3208b5a029164e542ddb5509e618f87b639ffe8cc2f54770022853080\",\"version\":\"v6.1.2\"},{\"arch\":\"amd64\",\"name\":\"buildifier\",\"platform\":\"windows\",\"sha256\":\"92bdd284fbc6766fc3e300b434ff9e68ac4d76a06cb29d1bdefe79a102a8d135\",\"version\":\"v6.1.2\"},{\"arch\":\"amd64\",\"name\":\"buildozer\",\"platform\":\"darwin\",\"sha256\":\"4014751a4cc5e91a7dc4b64be7b30c565bd9014ae6d1879818dc624562a1d431\",\"version\":\"v6.1.2\"},{\"arch\":\"arm64\",\"name\":\"buildozer\",\"platform\":\"darwin\",\"sha256\":\"e78bd5357f2356067d4b0d49ec4e4143dd9b1308746afc6ff11b55b952f462d7\",\"version\":\"v6.1.2\"},{\"arch\":\"amd64\",\"name\":\"buildozer\",\"platform\":\"linux\",\"sha256\":\"2aef0f1ef80a0140b8fe6e6a8eb822e14827d8855bfc6681532c7530339ea23b\",\"version\":\"v6.1.2\"},{\"arch\":\"arm64\",\"name\":\"buildozer\",\"platform\":\"linux\",\"sha256\":\"586e27630cbc242e8bd6fe8e24485eca8dcadea6410cc13cbe059202655980ac\",\"version\":\"v6.1.2\"},{\"arch\":\"amd64\",\"name\":\"buildozer\",\"platform\":\"windows\",\"sha256\":\"07664d5d08ee099f069cd654070cabf2708efaae9f52dc83921fa400c67a868b\",\"version\":\"v6.1.2\"}]"
+            }
+          },
+          "buildifier_darwin_amd64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-darwin-amd64"
+              ],
+              "downloaded_file_path": "buildifier",
+              "executable": true,
+              "sha256": "e2f4a67691c5f55634fbfb3850eb97dd91be0edd059d947b6c83d120682e0216"
+            }
+          },
+          "buildifier_darwin_arm64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-darwin-arm64"
+              ],
+              "downloaded_file_path": "buildifier",
+              "executable": true,
+              "sha256": "7549b5f535219ac957aa2a6069d46fbfc9ea3f74abd85fd3d460af4b1a2099a6"
+            }
+          },
+          "buildifier_linux_arm64": {
+            "bzlFile": "@@bazel_tools//tools/build_defs/repo:http.bzl",
+            "ruleClassName": "http_file",
+            "attributes": {
+              "urls": [
+                "https://github.com/bazelbuild/buildtools/releases/download/v6.1.2/buildifier-linux-arm64"
+              ],
+              "downloaded_file_path": "buildifier",
+              "executable": true,
+              "sha256": "0ba6e8e3208b5a029164e542ddb5509e618f87b639ffe8cc2f54770022853080"
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "buildifier_prebuilt~",
+            "bazel_skylib",
+            "bazel_skylib~"
+          ],
+          [
+            "buildifier_prebuilt~",
+            "bazel_tools",
+            "bazel_tools"
+          ]
+        ]
+      }
+    },
     "@@rules_java~//java:extensions.bzl%toolchains": {
       "general": {
         "bzlTransitiveDigest": "0N5b5J9fUzo0sgvH4F3kIEaeXunz4Wy2/UtSFV/eXUY=",
@@ -6952,6 +7232,86 @@
             "rules_java~",
             "remote_java_tools",
             "rules_java~~toolchains~remote_java_tools"
+          ]
+        ]
+      }
+    },
+    "@@rules_multitool~//multitool:extension.bzl%multitool": {
+      "general": {
+        "bzlTransitiveDigest": "rnaXvhEgIVHqILMPvZ8EX3INHc3VH5sbHZ/qkOyczjY=",
+        "recordedFileInputs": {},
+        "recordedDirentsInputs": {},
+        "envVariables": {},
+        "generatedRepoSpecs": {
+          "multitool.linux_x86_64": {
+            "bzlFile": "@@rules_multitool~//multitool/private:multitool.bzl",
+            "ruleClassName": "_env_specific_tools",
+            "attributes": {
+              "lockfiles": [
+                "@@//:multitool.lock.json"
+              ],
+              "os": "linux",
+              "cpu": "x86_64"
+            }
+          },
+          "multitool.linux_arm64": {
+            "bzlFile": "@@rules_multitool~//multitool/private:multitool.bzl",
+            "ruleClassName": "_env_specific_tools",
+            "attributes": {
+              "lockfiles": [
+                "@@//:multitool.lock.json"
+              ],
+              "os": "linux",
+              "cpu": "arm64"
+            }
+          },
+          "multitool.macos_x86_64": {
+            "bzlFile": "@@rules_multitool~//multitool/private:multitool.bzl",
+            "ruleClassName": "_env_specific_tools",
+            "attributes": {
+              "lockfiles": [
+                "@@//:multitool.lock.json"
+              ],
+              "os": "macos",
+              "cpu": "x86_64"
+            }
+          },
+          "multitool.macos_arm64": {
+            "bzlFile": "@@rules_multitool~//multitool/private:multitool.bzl",
+            "ruleClassName": "_env_specific_tools",
+            "attributes": {
+              "lockfiles": [
+                "@@//:multitool.lock.json"
+              ],
+              "os": "macos",
+              "cpu": "arm64"
+            }
+          },
+          "multitool": {
+            "bzlFile": "@@rules_multitool~//multitool/private:multitool.bzl",
+            "ruleClassName": "_multitool_hub",
+            "attributes": {
+              "lockfiles": [
+                "@@//:multitool.lock.json"
+              ]
+            }
+          }
+        },
+        "recordedRepoMappingEntries": [
+          [
+            "bazel_features~",
+            "bazel_features_globals",
+            "bazel_features~~version_extension~bazel_features_globals"
+          ],
+          [
+            "bazel_features~",
+            "bazel_features_version",
+            "bazel_features~~version_extension~bazel_features_version"
+          ],
+          [
+            "rules_multitool~",
+            "bazel_features",
+            "bazel_features~"
           ]
         ]
       }

@@ -2,6 +2,7 @@ bazel_dep(name = "aspect_bazel_lib", version = "2.7.7")
 bazel_dep(name = "aspect_rules_js", version = "2.0.0-rc2")
 bazel_dep(name = "aspect_rules_ts", version = "3.0.0-rc0")
 bazel_dep(name = "rules_nodejs", version = "6.1.1")
+bazel_dep(name = "rules_multitool", version = "0.7.1")
 
 node = use_extension("@rules_nodejs//nodejs:extensions.bzl", "node")
 node.toolchain(node_version = "20.13.0")
@@ -32,3 +33,7 @@ rules_ts_ext.deps(
     ts_version = "5.4.5",
 )
 use_repo(rules_ts_ext, "npm_typescript")
+
+multitool = use_extension("@rules_multitool//multitool:extension.bzl", "multitool")
+multitool.hub(lockfile = "//:multitool.lock.json")
+use_repo(multitool, "multitool")
