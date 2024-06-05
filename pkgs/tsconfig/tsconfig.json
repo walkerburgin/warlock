@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "plugins": [
-      { "name": "@monorepo/bazel-bin-tsserver-plugin" }
+      { "name": "ts-bazel-plugin" }
     ]
-  },
+  }
 }

@@ -5,5 +5,4 @@ pkgs/foo-lib/node_modules
 pkgs/bar-lib/node_modules
 pkgs/baz-lib/node_modules
 pkgs/vite-config/node_modules
-pkgs/bazel-bin-tsserver-plugin/node_modules
 pkgs/tsconfig/node_modules

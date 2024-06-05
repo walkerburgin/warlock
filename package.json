@@ -8,7 +8,7 @@
   "devDependencies": {
     "@bazel/bazelisk": "^1.19.0",
     "@bazel/ibazel": "^0.25.0",
-    "@monorepo/bazel-bin-tsserver-plugin": "file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz",
+    "ts-bazel-plugin": "^0.1.0",
     "prettier": "^3.3.0",
     "typescript": "^5.4.5",
     "vite": "^5.2.10"

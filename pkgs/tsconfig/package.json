@@ -5,8 +5,5 @@
   "scripts": {
     "build": "../../bin/bazel build ..."
   },
-  "dependencies": {
-    "@monorepo/bazel-bin-tsserver-plugin": "workspace:*"
-  },
   "author": "Walker Burgin <walkerburgin@gmail.com>"
 }

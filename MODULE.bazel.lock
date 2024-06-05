@@ -2199,8 +2199,8 @@
       "general": {
         "bzlTransitiveDigest": "ScEG76GXxlCoPNeD4eGooXQ4hYBvyKnbLPyiuN9nY/4=",
         "recordedFileInputs": {
-          "@@//package.json": "c5db791ab843b7c31e526349da06f0282803e7967599bc1e01049874f752d321",
-          "@@//pnpm-lock.yaml": "fa96ebfe623f0b8b043b128bd77e2e2a34143006b8b55f7932ed68b47a013266",
+          "@@//package.json": "eedb00a3a20ebaa8903b5f58577079851380c980a22e6f090252592db1799186",
+          "@@//pnpm-lock.yaml": "4504c046d780f8772a81c0a80c41f31f749328c91a077251b1acb5070c6a5e82",
           "@@//.npmrc": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
           "@@aspect_bazel_lib~~toolchains~yq_darwin_arm64//yq": "db8c11ca4c1dda8fe7c211e82e28191d48bd9ae83471b952003e819de79bcb51"
         },
@@ -2487,9 +2487,6 @@
               "link_workspace": "",
               "link_packages": {
                 "": [
-                  "typescript"
-                ],
-                "pkgs/bazel-bin-tsserver-plugin": [
                   "typescript"
                 ]
               },
@@ -2975,13 +2972,10 @@
             "attributes": {
               "package": "typescript",
               "version": "5.4.5",
-              "dev": false,
+              "dev": true,
               "root_package": "",
               "link_packages": {
                 "": [
-                  "typescript"
-                ],
-                "pkgs/bazel-bin-tsserver-plugin": [
                   "typescript"
                 ]
               },
@@ -3341,6 +3335,41 @@
               "replace_package": ""
             }
           },
+          "npm__ts-bazel-plugin__0.1.0__typescript_5.4.5__links": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_links",
+            "attributes": {
+              "package": "ts-bazel-plugin",
+              "version": "0.1.0_typescript_5.4.5",
+              "dev": true,
+              "root_package": "",
+              "link_packages": {
+                "": [
+                  "ts-bazel-plugin"
+                ]
+              },
+              "deps": {
+                "typescript": "5.4.5"
+              },
+              "transitive_closure": {
+                "ts-bazel-plugin": [
+                  "0.1.0_typescript_5.4.5"
+                ],
+                "typescript": [
+                  "5.4.5"
+                ]
+              },
+              "lifecycle_build_target": false,
+              "lifecycle_hooks_env": [],
+              "lifecycle_hooks_execution_requirements": [],
+              "lifecycle_hooks_use_default_shell_env": false,
+              "bins": {},
+              "package_visibility": [
+                "//visibility:public"
+              ],
+              "replace_package": ""
+            }
+          },
           "npm__nanoid__3.3.7": {
             "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
             "ruleClassName": "npm_import_rule",
@@ -3390,38 +3419,6 @@
                 "install",
                 "postinstall"
               ],
-              "extra_build_content": "",
-              "generate_bzl_library_targets": false,
-              "extract_full_archive": false
-            }
-          },
-          "npm__at_monorepo_bazel-bin-tsserver-plugin__0.0.0": {
-            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_rule",
-            "attributes": {
-              "package": "@monorepo/bazel-bin-tsserver-plugin",
-              "version": "0.0.0",
-              "root_package": "",
-              "link_workspace": "",
-              "link_packages": {
-                "": [
-                  "@monorepo/bazel-bin-tsserver-plugin"
-                ],
-                "pkgs/tsconfig": [
-                  "@monorepo/bazel-bin-tsserver-plugin"
-                ]
-              },
-              "integrity": "sha512-9qXs8B0XLFEpGmtCj2ebBiYtPBdIKUVsXi/ewrZxEG0d1zApULwmlIi32KrL/jyDdYIHhoTYqxsGLgErLJT0yg==",
-              "url": "file:pkgs/bazel-bin-tsserver-plugin/monorepo-bazel-bin-tsserver-plugin-0.0.0.tgz",
-              "commit": "",
-              "patch_args": [],
-              "patches": [],
-              "custom_postinstall": "",
-              "npm_auth": "",
-              "npm_auth_basic": "",
-              "npm_auth_username": "",
-              "npm_auth_password": "",
-              "lifecycle_hooks": [],
               "extra_build_content": "",
               "generate_bzl_library_targets": false,
               "extract_full_archive": false
@@ -4533,9 +4530,6 @@
               "dev": false,
               "root_package": "",
               "link_packages": {
-                "pkgs/bazel-bin-tsserver-plugin": [
-                  "@types/node"
-                ],
                 "pkgs/vite-config": [
                   "@types/node"
                 ]
@@ -4929,44 +4923,6 @@
               "lifecycle_hooks_execution_requirements": [
                 "no-sandbox"
               ],
-              "lifecycle_hooks_use_default_shell_env": false,
-              "bins": {},
-              "package_visibility": [
-                "//visibility:public"
-              ],
-              "replace_package": ""
-            }
-          },
-          "npm__at_monorepo_bazel-bin-tsserver-plugin__0.0.0__links": {
-            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
-            "ruleClassName": "npm_import_links",
-            "attributes": {
-              "package": "@monorepo/bazel-bin-tsserver-plugin",
-              "version": "0.0.0",
-              "dev": true,
-              "root_package": "",
-              "link_packages": {
-                "": [
-                  "@monorepo/bazel-bin-tsserver-plugin"
-                ],
-                "pkgs/tsconfig": [
-                  "@monorepo/bazel-bin-tsserver-plugin"
-                ]
-              },
-              "deps": {
-                "typescript": "5.4.5"
-              },
-              "transitive_closure": {
-                "@monorepo/bazel-bin-tsserver-plugin": [
-                  "0.0.0"
-                ],
-                "typescript": [
-                  "5.4.5"
-                ]
-              },
-              "lifecycle_build_target": false,
-              "lifecycle_hooks_env": [],
-              "lifecycle_hooks_execution_requirements": [],
               "lifecycle_hooks_use_default_shell_env": false,
               "bins": {},
               "package_visibility": [
@@ -5593,9 +5549,6 @@
               "root_package": "",
               "link_workspace": "",
               "link_packages": {
-                "pkgs/bazel-bin-tsserver-plugin": [
-                  "@types/node"
-                ],
                 "pkgs/vite-config": [
                   "@types/node"
                 ]
@@ -6240,6 +6193,35 @@
                 "//visibility:public"
               ],
               "replace_package": ""
+            }
+          },
+          "npm__ts-bazel-plugin__0.1.0__typescript_5.4.5": {
+            "bzlFile": "@@aspect_rules_js~//npm/private:npm_import.bzl",
+            "ruleClassName": "npm_import_rule",
+            "attributes": {
+              "package": "ts-bazel-plugin",
+              "version": "0.1.0_typescript_5.4.5",
+              "root_package": "",
+              "link_workspace": "",
+              "link_packages": {
+                "": [
+                  "ts-bazel-plugin"
+                ]
+              },
+              "integrity": "sha512-ZdBS6eF+VmFR2EoNpK4zvNo6nj7iLNW6rRJjNrWxfDVJkW6AKZvYRbk1ZYbKYyUAyeKs9XEycBGHVhj/UKfrfQ==",
+              "url": "https://registry.npmjs.org/ts-bazel-plugin/-/ts-bazel-plugin-0.1.0.tgz",
+              "commit": "",
+              "patch_args": [],
+              "patches": [],
+              "custom_postinstall": "",
+              "npm_auth": "",
+              "npm_auth_basic": "",
+              "npm_auth_username": "",
+              "npm_auth_password": "",
+              "lifecycle_hooks": [],
+              "extra_build_content": "",
+              "generate_bzl_library_targets": false,
+              "extract_full_archive": false
             }
           },
           "npm__at_types_prop-types__15.7.12": {
