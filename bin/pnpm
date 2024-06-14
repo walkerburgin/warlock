@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-# We only want to update the lockfile, never actually install dependencies in the source tree
-bazel run "@multitool//tools/$( basename $0 ):cwd" -- --lockfile-only "$@"
+JS_BINARY__CHDIR=$PWD bazel run -- @pnpm//:pnpm "$@"

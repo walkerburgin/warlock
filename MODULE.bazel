@@ -21,6 +21,14 @@ npm.npm_translate_lock(
 )
 use_repo(npm, "npm")
 
+pnpm = use_extension("@aspect_rules_js//npm:extensions.bzl", "pnpm")
+pnpm.pnpm(
+    name = "pnpm",
+    pnpm_version = "8.6.7",
+    pnpm_version_integrity = "sha512-vRIWpD/L4phf9Bk2o/O2TDR8fFoJnpYrp2TKqTIZF/qZ2/rgL3qKXzHofHgbXsinwMoSEigz28sqk3pQ+yMEQQ==",
+)
+use_repo(pnpm, "pnpm")
+
 rules_ts_ext = use_extension("@aspect_rules_ts//ts:extensions.bzl", "ext", dev_dependency = True)
 
 # Must be kept in sync with package.json

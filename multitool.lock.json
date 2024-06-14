@@ -1,35 +1,3 @@
 {
-    "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json",
-    "pnpm": {
-        "binaries": [
-            {
-                "kind": "file",
-                "url": "https://github.com/pnpm/pnpm/releases/download/v8.6.0/pnpm-macos-arm64",
-                "sha256": "7e709e0d9258c8b0f1bc63d1f706ff3b9b2ec7c219be17776efd4a632aa0a533",
-                "os": "macos",
-                "cpu": "arm64"
-            },
-            {
-                "kind": "file",
-                "url": "https://github.com/pnpm/pnpm/releases/download/v8.6.0/pnpm-macos-x64",
-                "sha256": "34332e55994c997e7c4dc88849dfac0b05b3a155cf49f01370c796fba0c30ec8",
-                "os": "macos",
-                "cpu": "x86_64"
-            },
-            {
-                "kind": "file",
-                "url": "https://github.com/pnpm/pnpm/releases/download/v8.6.0/pnpm-linux-x64",
-                "sha256": "65217461377e581c9f06feb2fe25bace001bb7d0fcecccc1642159095fad8a8e",
-                "os": "linux",
-                "cpu": "x86_64"
-            },
-            {
-                "kind": "file",
-                "url": "https://github.com/pnpm/pnpm/releases/download/v8.6.0/pnpm-linux-arm64",
-                "sha256": "5579e7e2975498bf7866a2537501e564bdfa1a984757060b2c0e93e5125a463e",
-                "os": "linux",
-                "cpu": "arm64"
-            }
-        ]
-    }
+    "$schema": "https://raw.githubusercontent.com/theoremlp/rules_multitool/main/lockfile.schema.json"
 }
