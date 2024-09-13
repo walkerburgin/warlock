@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "../../bin/bazel build ..."
+    "build": "../../bin/bazel build :all"
   },
   "author": "Walker Burgin <walkerburgin@gmail.com>"
 }
